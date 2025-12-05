@@ -1,0 +1,99 @@
+<div class="bg-white p-6 rounded-lg shadow-sm space-y-6">
+  <div class="flex justify-between items-center">
+    <h1 class="text-xl font-semibold text-gray-800">Status Of Lead Generated For New Connection</h1>
+    <div class="flex items-center">
+      <img src="https://picsum.photos/id/237/40/40" class="w-8 h-8 rounded-full mr-2">
+      <div>
+        <div class="font-semibold text-sm">Meerut</div>
+        <div class="text-xs text-gray-500">Mayur jain</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="flex justify-between items-end">
+    <div class="flex items-end space-x-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Enter Name/Street/MobileNumber</label>
+        <input type="text" class="mt-1 block w-72 px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm sm:text-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Enter BP Number</label>
+        <input type="text" class="mt-1 block w-48 px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm sm:text-sm">
+      </div>
+      <button class="py-2 px-6 bg-[#006A4E] text-white text-sm font-semibold rounded-md hover:bg-green-800">Search</button>
+      <button class="py-2 px-6 bg-red-600 text-white text-sm font-semibold rounded-md hover:bg-red-700">Reset</button>
+    </div>
+    <button class="flex items-center py-2 px-4 bg-[#006A4E] text-white text-sm font-semibold rounded-md hover:bg-green-800">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+      </svg>
+      Download
+    </button>
+  </div>
+
+  <!-- Leads Table -->
+  <div class="space-y-4">
+    <p class="text-sm text-gray-500">Showing page 1 of 1 of 46 entries</p>
+    <div class="flex justify-between items-center">
+      <div class="relative w-1/3">
+        <input type="text" placeholder="Search" class="w-full p-2 pl-10 border border-gray-300 rounded-md sm:text-sm">
+        <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+      </div>
+      <div class="flex items-center space-x-2">
+        <button class="flex items-center py-2 px-3 bg-[#006A4E] text-white text-sm font-semibold rounded-md hover:bg-green-800">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+          </svg>
+          Export
+        </button>
+        <button class="p-2 rounded-md border bg-white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-600">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.572a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white">
+        <thead class="bg-[#006A4E] text-white text-sm">
+          <tr>
+            <th class="py-3 px-4 text-left">Mr./Ms./Mrs. (Full Name With Surname)</th>
+            <th class="py-3 px-4 text-left">Father's/Mother's/Husband's Name</th>
+            <th class="py-3 px-4 text-left">HouseNo</th>
+            <th class="py-3 px-4 text-left">Society</th>
+            <th class="py-3 px-4 text-left">Street</th>
+            <th class="py-3 px-4 text-left">City</th>
+            <th class="py-3 px-4 text-left">Mobile Number</th>
+            <th class="py-3 px-4 text-left">Phone Number</th>
+            <th class="py-3 px-4 text-left">Email</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm text-gray-700">
+          @for (lead of leads(); track $index) {
+            <tr class="border-b">
+              <td class="py-3 px-4">{{lead.fullName}}</td>
+              <td class="py-3 px-4">{{lead.relationName}}</td>
+              <td class="py-3 px-4">{{lead.houseNo}}</td>
+              <td class="py-3 px-4">{{lead.society}}</td>
+              <td class="py-3 px-4">{{lead.street}}</td>
+              <td class="py-3 px-4">{{lead.city}}</td>
+              <td class="py-3 px-4">{{lead.mobileNumber}}</td>
+              <td class="py-3 px-4">{{lead.phoneNumber}}</td>
+              <td class="py-3 px-4">{{lead.email}}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <!-- Pagination -->
+    <div class="flex justify-end items-center mt-4 space-x-2 text-sm">
+        <button class="p-2 w-8 h-8 flex items-center justify-center rounded-md hover:bg-gray-100">&lt;</button>
+        <button class="p-2 w-8 h-8 flex items-center justify-center rounded-md bg-gray-200 font-bold">1</button>
+        <button class="p-2 w-8 h-8 flex items-center justify-center rounded-md hover:bg-gray-100">&gt;</button>
+        <span class="text-gray-600">20</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="w-full h-96 flex">
+  <!-- Y-Axis Labels -->
+  <div class="h-full flex flex-col justify-between text-xs text-gray-500 pr-2 border-r border-gray-200">
+    <span>900</span>
+    <span>800</span>
+    <span>700</span>
+    <span>600</span>
+    <span>500</span>
+    <span>400</span>
+    <span>300</span>
+    <span>200</span>
+    <span>100</span>
+    <span class="pb-6">0</span>
+  </div>
+
+  <!-- Chart Area -->
+  <div class="flex-1 flex justify-around items-end border-b border-gray-300 pl-2">
+    @for (item of data(); track item.name) {
+      <div class="h-full w-1/5 flex flex-col justify-end items-center px-2">
+        <div class="flex-1 flex justify-center items-end w-full gap-1">
+          <div class="w-1/3 bg-violet-300" [style.height]="getBarHeight(item.values[0].value)"></div>
+          <div class="w-1/3 bg-teal-400" [style.height]="getBarHeight(item.values[1].value)"></div>
+          <div class="w-1/3 bg-gray-400" [style.height]="getBarHeight(item.values[2].value)"></div>
+        </div>
+        <div class="text-xs text-gray-600 pt-2">{{ item.name }}</div>
+      </div>
+    }
+  </div>
+</div>

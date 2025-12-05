@@ -1,0 +1,149 @@
+<div class="bg-white p-6 rounded-lg shadow-sm space-y-6">
+  <h1 class="text-xl font-semibold text-gray-800 border-b pb-4">Customer Registration</h1>
+  
+  <form [formGroup]="registrationForm" (ngSubmit)="saveForm()">
+    <!-- Search Bar -->
+    <div class="flex items-center space-x-4 mb-6">
+      <label for="applicationNumber" class="text-sm font-medium text-gray-700">Application Number</label>
+      <input id="applicationNumber" type="text" formControlName="applicationNumber" class="flex-grow mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+      <button type="button" class="py-2 px-6 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+        SEARCH
+      </button>
+    </div>
+
+    <h2 class="text-lg font-semibold text-gray-700 mb-4">Customer Registration</h2>
+
+    <!-- Form Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Row 1 -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Mr./Ms./M/s. ( Full Name With Surname )</label>
+        <input type="text" formControlName="fullName" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Father's/Mother's/Husband's Name</label>
+        <input type="text" formControlName="relationName" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Application Date</label>
+        <input type="date" formControlName="applicationDate" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      
+      <!-- Row 2 -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">House/Flat No.</label>
+        <input type="text" formControlName="houseNo" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Society/Apartment</label>
+        <input type="text" formControlName="society" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Street/Area Name</label>
+        <input type="text" formControlName="street" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+
+      <!-- Row 3 -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">City</label>
+        <input type="text" formControlName="city" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">State</label>
+        <input type="text" formControlName="state" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Pin</label>
+        <input type="text" formControlName="pin" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+
+      <!-- Row 4 -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Area</label>
+        <input type="text" formControlName="area" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Landline Number (Office)</label>
+        <input type="text" formControlName="landlineOffice" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Landline Number (Residence)</label>
+        <input type="text" formControlName="landlineResidence" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+
+      <!-- Row 5 -->
+      <div class="md:col-span-1">
+        <label class="block text-sm font-medium text-gray-700">Mobile Number</label>
+        <input type="text" formControlName="mobileNumber" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium text-gray-700">Email Id</label>
+        <input type="email" formControlName="emailId" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+
+      <!-- Row 6 -->
+      <div class="md:col-span-3">
+        <label class="block text-sm font-medium text-gray-700 mb-2">Type of Ownership:</label>
+        <div class="flex items-center space-x-4">
+          <label class="inline-flex items-center">
+            <input type="radio" value="Owner" formControlName="ownership" class="form-radio text-green-600">
+            <span class="ml-2">Owner</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input type="radio" value="Rented" formControlName="ownership" class="form-radio text-green-600">
+            <span class="ml-2">Rented</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Row 7 -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Payment Plan</label>
+        <input type="text" formControlName="paymentPlan" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium text-gray-700">Promotional Scheme</label>
+        <input type="text" formControlName="promotionalScheme" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm">
+      </div>
+
+      <!-- Row 8 -->
+      <div class="md:col-span-3">
+        <div class="flex items-center space-x-8">
+            <label class="inline-flex items-center">
+                <input type="checkbox" formControlName="isBulk" class="form-checkbox text-green-600 rounded">
+                <span class="ml-2 text-sm font-medium text-gray-700">ISBULK?</span>
+            </label>
+            <label class="inline-flex items-center">
+                <input type="checkbox" formControlName="urgentVerification" class="form-checkbox text-green-600 rounded">
+                <span class="ml-2 text-sm font-medium text-gray-700">Urgent Verification</span>
+            </label>
+        </div>
+      </div>
+
+       <!-- Row 9 -->
+       <div class="md:col-span-3">
+        <label class="block text-sm font-medium text-gray-700 mb-2">Do you have LPG Connection?</label>
+        <div class="flex items-center space-x-4">
+          <label class="inline-flex items-center">
+            <input type="radio" value="Yes" formControlName="hasLpg" class="form-radio text-green-600">
+            <span class="ml-2">Yes</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input type="radio" value="No" formControlName="hasLpg" class="form-radio text-green-600">
+            <span class="ml-2">No</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex justify-center items-center space-x-4 pt-6 mt-6 border-t">
+      <button type="submit" class="py-2 px-8 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+        Save
+      </button>
+      <button type="button" (click)="clearForm()" class="py-2 px-8 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+        Clear
+      </button>
+    </div>
+  </form>
+</div>

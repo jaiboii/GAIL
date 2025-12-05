@@ -1,0 +1,5 @@
+{
+  "name": "GAIL",
+  "description": "An application for managing GAIL Gas customer data, including a dashboard, customer on-boarding, and reports.",
+  "requestFramePermissions": []
+}

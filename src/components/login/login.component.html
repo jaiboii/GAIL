@@ -1,0 +1,58 @@
+<div class="flex min-h-screen">
+  <!-- Image Section -->
+  <div class="w-3/5 hidden md:block">
+    <img src="https://cdn.pixabay.com/photo/2020/03/28/22/54/petrol-stations-4978824_1280.jpg" alt="Woman at a gas station" class="object-cover w-full h-full">
+  </div>
+
+  <!-- Form Section -->
+  <div class="w-full md:w-2/5 flex flex-col justify-center items-center bg-white p-8 relative">
+    <div class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-green-100 to-white"></div>
+    <div class="w-full max-w-sm z-10">
+      <div class="flex justify-center mb-8">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEX/AAD/Kir/LS3/AAD/Jib/ERH/AAD/Gxv/fHz/oKD/wMD/mZn/2dn/8PD/6ur/v7//ICD/Zmb/WFj/Pz//cnL/l5f/ysr/ubn/4uL/Tk7/ra3/urr/iIj/goL/dXX/paX/srL/zs7/3t7/e3v/aWn/Rkb/ODj/QUH/kJD/xMT/zMz/5eX5lV34AAAEdklEQVR4nO2dW3uqPBCGYQxGJRpEaR/w4Fpt1f//L242K1i32G1y0s5zzvut5vXOycklIM0MAQAAAAAAAAAAAAAAAAAAAADgX4Xv+zK/9w9mZvwfGZ74tP+hK/fD27gM3V8zJmO0eRzGv9m/c+3oMlxPzZg4Y/iR2T9z7ag43P8XzT9MxuM49s/cO6oJd8PzM+MznPtn7h1VjrvheZmJ0z/T/TN3juvCHZzPTJjyj+x/5t5xTbhrj5sZc+r9s/cOq4LdVp6YMcX+mbvHVeGuPU9MmL7A/pl7x1XhfuLpScL0p+l/5t5x1f1f+rK7mSnT93fsn7l3XHf3D3/tC6bO6w9m/8y9Y7r7h+9K/U/d/8y9Y7q7x31ZzIznD2b/zL1jurt71pWZ7L7zB7N/5t6x3N2zrqwF1a+z/2funa26d31VZuq98gezf+bO2ap3v1dm6v5Xf2T/z52zVf/uV8181f6Z++fsnK/7d7dqZo7+mfvnr53h3f1bmanL7zOz/8/ZOUP796dmpm79nZl/jp5Z+fd/p2Yj/82r9t45Q3v3p25+F+Zf/+2c3d1fVwAAAAAAAAAAAAAAAAAAAAAAAADgP43Kz/uQ+zM3d2X6F/aP3Dvb/W8X/X93Z+4d7Q/8s/cOa4Ld+L6/n+yfuXVcF+/wT1/YP3Pr2A44W/bP3DomE44L+1/sn7l2bBcuw/tn7h0LCbe37J+5dxwl3Mv7Z+4dBwl3s/7Z+4dKwm3rP2z9w6phPvS/tn7h1TC/W77Z+4dUwn3u+2fuXVcF+7P2j9z77guXND2z9w7rgvLtf3z9w7b4f5+7b9+5t5xXbifz+3fv3funa3C/WFu/fq9e8dWhfv3evfuHVoJ96v17t17R1ahfvVavfuHVoL9yrV7946thPvVavfuHWsJ94vV7t071hLuF6vd2/v3rSTcL1a7d+8dW4n7xei/9w6thPu/v/funa3C/Xt/f/eOrUb7pX///gPr68B9AAAAAAAAAAAAAAAAAAAAAAAA+BdLz2eFqB2fB8uJ+l0vX3n4X7V488s3Wl7Xv7Pwv7HwvzrwL/Z9Gf7L03/l12/m3/7yD24P6/W+yX59zS48m/X+w9X5rN2Jb/l+kL3r8+H6WbM8X6fW6818vY+l5/W53+zX22/z8U2xX16P1/r8fR3+wW/1hR/jNq7z6/b0M6/H692u82s27b9M36/R47UeX9N1f6+1Xu/2P6bXtT2/X6NnvX2n31/f/5e7r9H7eP1+P7+vX/fX+7W/X8/hN+2p19/189/l6+/0+r/6fGfL+n29/l+/f/D1d/n/lR/37v/z+j/fD+37f/418jIAAAAAAAAAAAAAAAAAAAAAAAAAv0t+AY3D3+F/x78GAAAAAElFTSuQmCC" alt="GAIL Gas Limited Logo" class="w-32">
+      </div>
+      <h2 class="text-2xl font-semibold text-center text-gray-800 mb-4">Welcome to GAIL Gas Limited</h2>
+      <hr class="mb-8 border-gray-200">
+      
+      <form (ngSubmit)="login()">
+        <div class="mb-4">
+          <label for="email" class="block text-sm text-gray-600">Email</label>
+          <input 
+            id="email" 
+            type="email" 
+            [ngModel]="email()"
+            (ngModelChange)="email.set($event)"
+            name="email"
+            class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-md placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+            placeholder="email@gmail.com"
+            required>
+        </div>
+
+        <div class="mb-6">
+          <label for="password" class="block text-sm text-gray-600">Password</label>
+          <input 
+            id="password" 
+            type="password" 
+            [ngModel]="password()"
+            (ngModelChange)="password.set($event)"
+            name="password"
+            class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-md placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+            placeholder="password"
+            required>
+        </div>
+
+        @if (errorMessage()) {
+          <p class="text-red-500 text-sm text-center mb-4">{{ errorMessage() }}</p>
+        }
+
+        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#006A4E] hover:bg-[#005c44] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 tracking-wider">
+          LOGIN
+        </button>
+      </form>
+      
+      <div class="text-center mt-4">
+        <a href="#" class="text-sm text-green-500 hover:text-green-700">Forgot Password</a>
+      </div>
+    </div>
+  </div>
+</div>
